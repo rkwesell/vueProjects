@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link type="text/css" rel="stylesheet" href="reset.css"/>
+    <link type="text/css" rel="stylesheet" href="practiceApp.css"/>
+</head>
+<body>
+
+<div id="practiceApp">
+    <app-nav>
+        <ul>
+            <nav-item v-for="item in navigation" v-bind:todo="item" v-bind:key="item.id"></nav-item>
+        </ul>
+    </app-nav>
+    <app-view>
+        <app-content>
+
+        </app-content>
+        <app-sidebar>
+
+        </app-sidebar>
+    </app-view>
+</div>
+
+
+
+
+
+
+
+<script>
+
+    Vue.component('nav-item', {
+        props: ['todo'],
+        template: '<li><a href="#"><span>{{ todo.text }}</span></a></li>'
+    })
+    var app7 = new Vue({
+        el: 'app-nav',
+        data: {
+            navigation: [
+                { id: 0, text: 'Home' },
+                { id: 1, text: 'About Us' },
+                { id: 2, text: 'Products' },
+                { id: 3, text: 'Contact' },
+                { id: 4, text: 'FAQ' }
+            ]
+        }
+    })
+
+
+
+</script>
+
+
+</body>
+</html>

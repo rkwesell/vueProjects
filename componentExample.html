@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+
+
+
+
+<div id="app-7">
+
+
+    <ol id="headerNavigation">
+        <!--
+          Now we provide each todo-item with the todo object
+          it's representing, so that its content can be dynamic.
+          We also need to provide each component with a "key",
+          which will be explained later.
+        -->
+        <header-navigation
+                v-for="item in headerNavigation"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+        </header-navigation>
+    </ol>
+
+    <ol id="leftNavigation">
+        <!--
+          Now we provide each todo-item with the todo object
+          it's representing, so that its content can be dynamic.
+          We also need to provide each component with a "key",
+          which will be explained later.
+        -->
+        <left-navigation
+                v-for="item in leftNavigation"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+        </left-navigation>
+    </ol>
+
+    <span>{{a}}</span>
+
+</div>
+
+
+
+<script>
+
+
+    var navigationObject = {
+        a:1,
+        footerNav:[],
+        headerNavigation: [
+            { id: 0, text: 'login' },
+            { id: 1, text: 'careers' },
+            { id: 2, text: 'about us' },
+            { id: 3, text: 'contact us' }
+        ],
+
+        leftNavigation: [
+            { id: 0, text: 'womens' },
+            { id: 1, text: 'mens' },
+            { id: 2, text: 'slave  gear' }
+        ]
+
+    };
+
+
+
+    Vue.component('header-navigation', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    });
+
+    Vue.component('left-navigation', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    });
+
+    var app7 = new Vue({
+
+        data: navigationObject
+    });
+
+//    app7.$el === document.getElementById('app-7') // => true
+
+app7.$mount(document.getElementById('app-7'));
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
