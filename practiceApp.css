@@ -37,7 +37,7 @@ app-sidebar{
 [v-cloak] {
     display: none;
 }
-form{
+app-sidebar form{
     background-color: #61a1bc;
     border-radius: 2px;
     box-shadow: 0 1px 1px #ccc;
@@ -46,7 +46,7 @@ form{
     margin: 50px auto;
 }
 
-form h1{
+app-sidebar form h1{
     color:#fff;
     font-size:44px;
     font-family:'Cookie', cursive;
@@ -55,7 +55,7 @@ form h1{
     text-shadow:0 3px 0 rgba(0,0,0,0.1);
 }
 
-form ul{
+app-sidebar form ul{
     list-style:none;
     color:#fff;
     font-size:20px;
@@ -64,7 +64,7 @@ form ul{
     margin:20px 0 15px;
 }
 
-form ul li{
+app-sidebar form ul li{
     padding:20px 30px;
     background-color:#e35885;
     margin-bottom:8px;
@@ -72,15 +72,15 @@ form ul li{
     cursor:pointer;
 }
 
-form ul li span{
+app-sidebar form ul li span{
     float:right;
 }
 
-form ul li.active{
+app-sidebar form ul li.active{
     background-color:#8ec16d;
 }
 
-div.total{
+app-sidebar div.total{
     border-top:1px solid rgba(255,255,255,0.5);
     padding:15px 30px;
     font-size:20px;
@@ -89,6 +89,106 @@ div.total{
     color:#fff;
 }
 
-div.total span{
+app-sidebar div.total span{
     float:right;
+}
+
+app-content{
+    float:left;
+}
+app-content div{
+    width: 1030px;
+    background-color: pink;
+    margin: 50px 0 50px 10px;
+}
+/* Hide un-compiled mustache bindings
+until the Vue instance is ready */
+
+app-content div [v-cloak] {
+    display: none;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+app-content div .bar{
+    background-color:#5c9bb7;
+
+    background-image:-webkit-linear-gradient(top, #5c9bb7, #5392ad);
+    background-image:-moz-linear-gradient(top, #5c9bb7, #5392ad);
+    background-image:linear-gradient(top, #5c9bb7, #5392ad);
+
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 2px;
+    width: 400px;
+    padding: 14px;
+    margin: 45px auto 20px;
+    position:relative;
+}
+
+app-content div .bar h1{
+    color:#000;
+    font-size:44px;
+    font-family:'Cookie', cursive;
+    font-weight: normal;
+    line-height:1;
+    text-shadow:0 3px 0 rgba(0,0,0,0.1);
+}
+
+app-content div ul{
+    list-style: none;
+    width: 428px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+app-content div ul li{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    overflow: hidden;
+}
+
+app-content div ul li img{
+    width:60px;
+    height:60px;
+    float:left;
+    border:none;
+}
+
+app-content div ul li p{
+    margin-left: 75px;
+    font-weight: bold;
+    padding-top: 12px;
+    color:#6e7a7f;
+}
+
+
+app-footer{
+    float: left;
+    width: 100%;
+    background:yellow;
+}
+app-footer ul{
+    height:60px;
+}
+app-footer li{
+    float:left;
+    height:60px;
+    width:20%;
+}
+app-footer li a{
+    display:block;
+    width:100%;
+    height:100%;
+    text-decoration: none;
+}
+app-footer li:first-child a{
+    color:red;
+}
+app-footer li span{
+    display:block;
+    text-align:center;
+    padding-top:23px;
 }
